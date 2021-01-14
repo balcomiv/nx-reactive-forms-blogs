@@ -114,6 +114,45 @@
           }
         }
       }
+    },
+    "reactive-forms-with-smart-dumb-components": {
+      "projectType": "library",
+      "root": "libs/reactive-forms-with-smart-dumb-components",
+      "sourceRoot": "libs/reactive-forms-with-smart-dumb-components/src",
+      "prefix": "nx-reactive-forms-blogs",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/reactive-forms-with-smart-dumb-components/tsconfig.lib.json",
+            "project": "libs/reactive-forms-with-smart-dumb-components/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/reactive-forms-with-smart-dumb-components/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/reactive-forms-with-smart-dumb-components/src/**/*.ts",
+              "libs/reactive-forms-with-smart-dumb-components/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/reactive-forms-with-smart-dumb-components"
+          ],
+          "options": {
+            "jestConfig": "libs/reactive-forms-with-smart-dumb-components/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
